@@ -1,5 +1,5 @@
 #!/bin/bash
-echo "Please enter the service name"
+service=httpd
 pgrep -f $service >/dev/null
 if [ $? -eq 0 ];
 then
