@@ -11,6 +11,7 @@ sudo systemctl status $service | awk 'NR==3{print $1,$2}'
 echo "Starting the service of this $service"
 sudo systemctl start $service
 sleep 5
+done
 
 pgrep -f $service >/dev/null
 if [ $? -eq 0 ];
