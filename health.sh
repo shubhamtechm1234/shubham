@@ -24,4 +24,4 @@ else
 echo "we got error while runing the $service"
 fi
 fi
-done
+
