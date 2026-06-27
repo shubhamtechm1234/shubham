@@ -1,6 +1,7 @@
 #!/bin/bash
 for service in jenkins httpd; do pgrep -f "$service" >/dev/null;
-if [ $? -eq 0 ];
+status=$?
+if [ $status -eq 0 ];
 then
 echo "$service is running"
 ps -C httpd -o %cpu,%mem --no-headers | \
