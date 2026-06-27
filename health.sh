@@ -14,7 +14,8 @@ sudo systemctl start $service
 sleep 5
 
 pgrep -f $service >/dev/null
-if [ $? -eq 0 ];
+status=$?
+if [ $status -eq 0 ];
 then
 echo "$service is running now"
 sudo systemctl status $service | awk 'NR==3{print $1,$2}'
