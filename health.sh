@@ -1,8 +1,6 @@
 #!/bin/bash
 for service in jenkins httpd; do
-    echo "Checking $service..."
     pgrep -f "$service" >/dev/null
-    echo "$?"
 done
 if [ $? -eq 0 ];
 then
