@@ -1,6 +1,5 @@
 #!/bin/bash
-service=jenkins
-    pgrep -f "$service" >/dev/null
+for service in jenkins httpd; do pgrep -f "$service" >/dev/null
 if [ $? -eq 0 ];
 then
 echo "$service is running"
@@ -24,4 +23,5 @@ else
 echo "we got error while runing the $service"
 fi
 fi
+do
 
