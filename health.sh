@@ -1,5 +1,5 @@
 #!/bin/bash
-service=jenkins
+for in jenkins httpd ; do
 pgrep -f $service >/dev/null
 if [ $? -eq 0 ];
 then
