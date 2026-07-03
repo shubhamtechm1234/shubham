@@ -3,7 +3,7 @@ for service in jenkins httpd; do pgrep -f "$service" >/dev/null;
 status=$?
 if [ $status -eq 0 ];
 then
-echo "$service is Running"
+echo "$service is running"
 ps -C httpd -o %cpu,%mem --no-headers | \
 awk '{cpu+=$1; mem+=$2} END {print "CPU:",cpu"%","MEM:",mem"%"}'
 else
