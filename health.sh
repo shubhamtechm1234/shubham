@@ -7,7 +7,7 @@ echo "$service is Runing"
 ps -C httpd -o %cpu,%mem --no-headers | \
 awk '{cpu+=$1; mem+=$2} END {print "CPU:",cpu"%","MEM:",mem"%"}'
 else
-echo "$service is not Runing"
+echo "$service is not runing"
 sudo systemctl status $service | awk 'NR==3{print $1,$2}'
 echo "Starting the service of this $service"
 sudo systemctl start $service
